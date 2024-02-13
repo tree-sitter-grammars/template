@@ -27,5 +27,3 @@ jobs:
   # NOTE: uncomment this job if you use an external scanner:
   # fuzz:
   #   uses: tree-sitter-grammars/.github/.github/workflows/fuzz.yml@main
-  #   with:
-  #     language: PARSER_NAME
