@@ -22,7 +22,7 @@ jobs:
           grep -rl PARSER_NAME | xargs sed "s/PARSER_NAME/$PARSER_NAME/g" -i
           grep -rl AUTHOR_NAME | xargs sed "s/AUTHOR_NAME/$AUTHOR_NAME/g" -i
           if [[ $REPO_OWNER != tree-sitter-grammars ]]; then
-            grep --exclude-dir=.github -rl tree-sitter-grammars | \
+            grep --exclude-dir=.github/workflows -rl tree-sitter-grammars | \
               xargs sed "s/tree-sitter-grammars/$REPO_OWNER/g" -i
           fi
           rm .github/workflows/setup.yml
