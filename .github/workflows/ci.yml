@@ -26,4 +26,8 @@ jobs:
       test-library: false
   # NOTE: uncomment this job if you use an external scanner:
   # fuzz:
-  #   uses: tree-sitter-grammars/.github/.github/workflows/fuzz.yml@main
+  #   name: Fuzz parser
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #    - uses: actions/checkout@v4
+  #    - uses: tree-sitter-grammars/tree-sitter-fuzz-action@v3
