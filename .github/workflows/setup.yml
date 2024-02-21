@@ -32,6 +32,7 @@ jobs:
           AUTHOR_NAME: ${{github.event.head_commit.author.name}}
           AUTHOR_EMAIL: ${{github.event.head_commit.author.email}}
       - name: Update repository details
+        continue-on-error: true
         run: |-
           gh repo edit \
             --enable-merge-commit=false \
@@ -43,6 +44,7 @@ jobs:
             --add-topic="$PARSER_NAME" \
             -d "${REPO_DESC:-$PARSER_NAME grammar for tree-sitter}"
         env:
+          GH_TOKEN: ${{github.token}}
           REPO_DESC: ${{github.event.repository.description}}
       - name: Update commit
         uses: stefanzweifel/git-auto-commit-action@v5
