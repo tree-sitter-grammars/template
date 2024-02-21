@@ -20,9 +20,24 @@ on:
       - binding.gyp
 
 jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: tree-sitter-grammars/actions/setup@main
+        with:
+          node-version: ${{vars.NODE_VERSION}}
+      - name: Run lint
+        uses: tree-sitter-grammars/actions/test@main
+        with:
+          lint: true
+          test-grammar: false
+
   test:
     name: Test parser
     runs-on: ${{matrix.os}}
+    needs: [lint]
     if: "!github.event.repository.is_template && github.event.head_commit.message != 'Initial commit'"
     strategy:
       fail-fast: false
