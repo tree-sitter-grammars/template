@@ -42,20 +42,19 @@ jobs:
           skip_fetch: true
       - name: Add next steps to summary
         run: |-
-          cat >> "$GITHUB_STEP_SUMMARY" <<EOF
-          The repository has been created.<br/>
-          You can now clone and configure it like so:
-
-          ~~~bash
-          gh repo clone ${{github.repository}}
-          gh repo edit \
-            --enable-merge-commit=false \
-            --enable-discussions=false \
-            --enable-projects=false \
-            --enable-wiki=false \
-            --add-topic=tree-sitter \
-            --add-topic=parser \
-            --add-topic=$PARSER_NAME \
-            -d '$PARSER_NAME grammar for tree-sitter'
-          ~~~
-          EOF
+          printf '%s\n' >> "$GITHUB_STEP_SUMMARY" \
+            'The repository has been set up successfully.' \
+            'You can now clone and configure it like so:' \
+            '' \
+            '~~~bash' \
+            'gh repo clone ${{github.repository}}' \
+            'gh repo edit \' \
+            '  --enable-merge-commit=false \' \
+            '  --enable-discussions=false \' \
+            '  --enable-projects=false \' \
+            '  --enable-wiki=false \' \
+            '  --add-topic=tree-sitter \' \
+            '  --add-topic=parser \' \
+            '  --add-topic=${{env.PARSER_NAME}} \' \
+            "  -d '${PARSER_NAME^} grammar for tree-sitter'" \
+            '~~~'
