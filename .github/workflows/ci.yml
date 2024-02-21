@@ -1,4 +1,4 @@
-name: Test grammar
+name: CI
 
 on:
   push:
@@ -19,15 +19,28 @@ on:
 
 jobs:
   test:
-    uses: tree-sitter-grammars/.github/.github/workflows/ci.yml@main
+    name: Test parser
+    runs-on: ${{matrix.os}}
     if: "!github.event.repository.is_template && github.event.head_commit.message != 'Initial commit'"
-    with:
-      # NOTE: change to true to also test the rust library:
-      test-library: false
-  # NOTE: uncomment this job if you use an external scanner:
-  # fuzz:
-  #   name: Fuzz parser
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #    - uses: actions/checkout@v4
-  #    - uses: tree-sitter-grammars/tree-sitter-fuzz-action@v3
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-14]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up NodeJS
+        uses: actions/setup-node@v4
+        with:
+          cache: npm
+          node-version: ${{vars.NODE_VERSION}}
+      - name: Set up Rust
+        uses: actions-rust-lang/setup-rust-toolchain@v1.8
+        if: runner.os == 'macOS'
+      - name: Install dependencies
+        shell: sh
+        run: npm ci
+      - name: Run tests
+        uses: tree-sitter-grammars/actions/test@main
+        with:
+          test-library: ${{runner.os == 'Linux'}}
