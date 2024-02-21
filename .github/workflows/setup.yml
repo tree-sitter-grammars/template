@@ -31,21 +31,6 @@ jobs:
           REPO_NAME: ${{github.event.repository.name}}
           AUTHOR_NAME: ${{github.event.head_commit.author.name}}
           AUTHOR_EMAIL: ${{github.event.head_commit.author.email}}
-      - name: Update repository details
-        continue-on-error: true
-        run: |-
-          gh repo edit \
-            --enable-merge-commit=false \
-            --enable-discussions=false \
-            --enable-projects=false \
-            --enable-wiki=false \
-            --add-topic='tree-sitter' \
-            --add-topic='parser' \
-            --add-topic="$PARSER_NAME" \
-            -d "${REPO_DESC:-$PARSER_NAME grammar for tree-sitter}"
-        env:
-          GH_TOKEN: ${{github.token}}
-          REPO_DESC: ${{github.event.repository.description}}
       - name: Update commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
@@ -55,3 +40,21 @@ jobs:
           commit_options: --amend
           push_options: --force
           skip_fetch: true
+      - name: Add next steps to summary
+        run: |-
+          printf '%s\n' >> "$GITHUB_STEP_SUMMARY" \
+            'The repository has been set up successfully.' \
+            'You can now clone and configure it like so:' \
+            '' \
+            '~~~bash' \
+            'gh repo clone ${{github.repository}}' \
+            'gh repo edit \' \
+            '  --enable-merge-commit=false \' \
+            '  --enable-discussions=false \' \
+            '  --enable-projects=false \' \
+            '  --enable-wiki=false \' \
+            '  --add-topic=tree-sitter \' \
+            '  --add-topic=parser \' \
+            '  --add-topic=${{env.PARSER_NAME}} \' \
+            "  -d '${PARSER_NAME^} grammar for tree-sitter'" \
+            '~~~'
