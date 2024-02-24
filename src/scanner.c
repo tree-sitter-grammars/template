@@ -13,10 +13,6 @@ void tree_sitter_PARSER_NAME_external_scanner_destroy(void *payload) {
   /* NOOP */
 }
 
-void tree_sitter_PARSER_NAME_external_scanner_reset(void *payload) {
-  /* NOOP */
-}
-
 unsigned tree_sitter_PARSER_NAME_external_scanner_serialize(void *payload, char *buffer) {
   return 0;
 }
