@@ -6,6 +6,7 @@
 <!-- NOTE: uncomment these if you're publishing packages: -->
 <!-- [![npm][npm]](https://www.npmjs.com/package/tree-sitter-PARSER_NAME) -->
 <!-- [![crates][crates]](https://crates.io/crates/tree-sitter-PARSER_NAME) -->
+<!-- [![pypi][pypi]](https://pypi.org/project/tree-sitter-PARSER_NAME/) -->
 
 A tree-sitter parser for PARSER_NAME files.
 
@@ -18,3 +19,4 @@ A tree-sitter parser for PARSER_NAME files.
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
 [npm]: https://img.shields.io/npm/v/tree-sitter-PARSER_NAME?logo=npm
 [crates]: https://img.shields.io/crates/v/tree-sitter-PARSER_NAME?logo=rust
+[pypi]: https://img.shields.io/pypi/v/tree-sitter-PARSER_NAME?logo=pypi&logoColor=ffd242
