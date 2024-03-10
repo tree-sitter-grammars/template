@@ -15,7 +15,7 @@ jobs:
       - name: Install tree-sitter CLI
         uses: tree-sitter/setup-action/cli@v1
         with:
-          tree-sitter-ref: f8c41f7
+          tree-sitter-ref: latest
       - name: Remove template files
         run: rm .gitattributes .github/workflows/setup.yml
       - name: Generate bindings
