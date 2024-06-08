@@ -17,6 +17,7 @@ A tree-sitter parser for PARSER_NAME files.
 [ci]: https://img.shields.io/github/actions/workflow/status/tree-sitter-grammars/tree-sitter-PARSER_NAME/ci.yml?logo=github&label=CI
 [discord]: https://img.shields.io/discord/1063097320771698699?logo=discord&label=discord
 [matrix]: https://img.shields.io/matrix/tree-sitter-chat%3Amatrix.org?logo=matrix&label=matrix
-[npm]: https://img.shields.io/npm/v/tree-sitter-PARSER_NAME?logo=npm
-[crates]: https://img.shields.io/crates/v/tree-sitter-PARSER_NAME?logo=rust
-[pypi]: https://img.shields.io/pypi/v/tree-sitter-PARSER_NAME?logo=pypi&logoColor=ffd242
+<!-- NOTE: uncomment these if you're publishing packages: -->
+<!-- [npm]: https://img.shields.io/npm/v/tree-sitter-PARSER_NAME?logo=npm -->
+<!-- [crates]: https://img.shields.io/crates/v/tree-sitter-PARSER_NAME?logo=rust -->
+<!-- [pypi]: https://img.shields.io/pypi/v/tree-sitter-PARSER_NAME?logo=pypi&logoColor=ffd242 -->
