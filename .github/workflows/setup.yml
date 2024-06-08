@@ -35,7 +35,12 @@ jobs:
           AUTHOR_EMAIL: ${{github.event.head_commit.author.email}}
       - name: Update files
         run: |-
-          sed -i README.md -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
+          sed -i README.md \
+            -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
+            -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
+          sed -i .github/ISSUE_TEMPLATE/bug_report.yml \
+            -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
+            -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
           sed -i LICENSE -e 's/AUTHOR_NAME/${{env.AUTHOR_NAME}}/'
           sed -i grammar.js \
             -e 's/TODO:/NOTE:/' \
