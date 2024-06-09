@@ -49,7 +49,7 @@ jobs:
           } >> "$GITHUB_OUTPUT"
       - name: Fuzz scanner
         uses: tree-sitter/fuzz-action@v4
-        if: steps.scanner-check.outputs.changed == 'true'
+        if: steps.scanner-check.outputs.changed == 'true' && ${{runner.os == 'Linux'}}
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
