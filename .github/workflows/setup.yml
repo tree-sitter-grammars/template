@@ -64,6 +64,10 @@ jobs:
             -e '/Uncomment these/s/Uncomment.*/NOTE: \l&:/'
           sed -i bindings/go/binding_test.go \
             -e 's|/tree-sitter/.*|/${{github.repository}}"|'
+          sed -i .github/ISSUE_TEMPLATE/bug_report.yml \
+            -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
+          sed -i .github/ISSUE_TEMPLATE/feature_request.yml \
+            -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
           mv .github/not-dependabot.yml .github/dependabot.yml
         env:
           REPO_OWNER: ${{github.repository_owner}}
