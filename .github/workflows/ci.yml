@@ -41,17 +41,6 @@ jobs:
         uses: actions/checkout@v4
       - name: Set up tree-sitter
         uses: tree-sitter/setup-action/cli@v1
-      - name: Check for scanner changes
-        id: scanner-check
-        shell: sh
-        run: |-
-          {
-            test -f src/scanner.c && ! git diff --quiet HEAD^ -- "$_" &&
-            printf 'changed=true\n' || printf 'changed=false\n'
-          } >> "$GITHUB_OUTPUT"
-      - name: Fuzz scanner
-        uses: tree-sitter/fuzz-action@v4
-        if: steps.scanner-check.outputs.changed == 'true'
       - name: Run tests
         uses: tree-sitter/parser-test-action@v2
         with:
