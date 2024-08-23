@@ -5,7 +5,7 @@ void *tree_sitter_PARSER_NAME_external_scanner_create() {
   return NULL;
 }
 
-bool tree_sitter_xml_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
+bool tree_sitter_PARSER_NAME_external_scanner_scan(void *payload, TSLexer *lexer, const bool *valid_symbols) {
   return false;
 }
 
