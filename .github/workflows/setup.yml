@@ -42,6 +42,7 @@ jobs:
           sed -i grammar.js \
             -e 's/TODO:/NOTE:/' \
             -e 's/source_file.*/changeme: $ => "",/'
+          sed -i src/scanner.c -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
           sed -i package.json \
             -e '/"scope"/a \      "highlights": "queries/highlights.scm",' \
             -e '/"repository"/a \  "author": "${{env.AUTHOR_NAME_EMAIL}}",' \
