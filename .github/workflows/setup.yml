@@ -68,7 +68,7 @@ jobs:
             -e 's|/tree-sitter/.*|/${{github.repository}}"|'
           sed -i .github/ISSUE_TEMPLATE/bug_report.yml \
             -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
-            -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}'
+            -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
           sed -i .github/ISSUE_TEMPLATE/feature_request.yml \
             -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
           mv .github/not-dependabot.yml .github/dependabot.yml
