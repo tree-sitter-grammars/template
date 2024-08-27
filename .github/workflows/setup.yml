@@ -37,6 +37,7 @@ jobs:
         run: |-
           sed -i README.md \
             -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
+            -e 's/REPO_NAME/${{env.REPO_NAME}}/' \
             -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
           sed -i LICENSE -e 's/AUTHOR_NAME/${{env.AUTHOR_NAME}}/'
           sed -i grammar.js \
@@ -69,6 +70,7 @@ jobs:
             -e 's|/tree-sitter/.*|/${{github.repository}}"|'
           sed -i .github/ISSUE_TEMPLATE/bug_report.yml \
             -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
+            -e 's/REPO_NAME/${{env.REPO_NAME}}/' \
             -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
           sed -i .github/ISSUE_TEMPLATE/feature_request.yml \
             -e 's/PARSER_NAME/${{env.PARSER_NAME}}/g'
