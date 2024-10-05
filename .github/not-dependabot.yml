@@ -4,7 +4,7 @@ updates:
     directory: /
     schedule:
       interval: weekly
-      day: sunday
+      day: saturday
     commit-message:
       prefix: ci
     labels:
@@ -13,21 +13,21 @@ updates:
       actions:
         patterns: ["*"]
 
-  - package-ecosystem: npm
-    versioning-strategy: increase
-    directory: /
-    schedule:
-      interval: weekly
-      day: sunday
-    commit-message:
-      prefix: build(deps)
-    labels:
-      - dependencies
-    groups:
-      npm:
-        patterns: ["*"]
+  # NOTE: uncomment the ecosystems you want to keep up-to-date
 
-  # NOTE: uncomment to also keep cargo up-to-date
+  # - package-ecosystem: npm
+  #   versioning-strategy: increase
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     npm:
+  #       patterns: ["*"]
 
   # - package-ecosystem: cargo
   #   directory: /
@@ -40,4 +40,43 @@ updates:
   #     - dependencies
   #   groups:
   #     cargo:
+  #       patterns: ["*"]
+
+  # - package-ecosystem: pip
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     pip:
+  #       patterns: ["*"]
+
+  # - package-ecosystem: swift
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     swift:
+  #       patterns: ["*"]
+
+  # - package-ecosystem: gomod
+  #   directory: /
+  #   schedule:
+  #     interval: weekly
+  #     day: sunday
+  #   commit-message:
+  #     prefix: build(deps)
+  #   labels:
+  #     - dependencies
+  #   groups:
+  #     go:
   #       patterns: ["*"]
