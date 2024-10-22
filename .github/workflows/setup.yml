@@ -73,7 +73,7 @@ jobs:
               -e 's/PARSER_NAME/${{env.PARSER_NAME}}/' \
               -e 's/tree-sitter-grammars/${{env.REPO_OWNER}}/'
           sed -i .github/ISSUE_TEMPLATE/feature_request.yml \
-              -e 's/PARSER_NAME/${{env.PARSER_NAME}}/'
+              -e 's/PARSER_NAME/${{env.PARSER_NAME}}/g'
           mv .github/not-dependabot.yml .github/dependabot.yml
         env:
           REPO_OWNER: ${{github.repository_owner}}
