@@ -5,10 +5,10 @@ labels: [enhancement]
 body:
   - type: checkboxes
     attributes:
-      label: Did you check the tree-sitter docs?
+      label: Did you check the Tree-sitter docs?
       description: Make sure you read all the docs before submitting a feature request
       options:
-        - label: I have read all the [tree-sitter docs](https://tree-sitter.github.io/tree-sitter/using-parsers) if it relates to using the parser
+        - label: I have read all the [Tree-sitter docs](https://tree-sitter.github.io/tree-sitter/using-parsers) if it relates to using the parser
           required: false
   - type: textarea
     validations:

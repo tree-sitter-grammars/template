@@ -19,14 +19,14 @@ body:
           required: true
   - type: input
     attributes:
-      label: "Tree-Sitter CLI Version, if relevant (output of `tree-sitter --version`)"
+      label: "Tree-sitter CLI Version, if relevant (output of `tree-sitter --version`)"
       placeholder: "tree-sitter 0.20.8 (6bbb50bef8249e6460e7d69e42cc8146622fa4fd)"
     validations:
       required: false
   - type: textarea
     attributes:
       label: Describe the bug
-      description: A clear and concise description of what the bug is. Please include any related errors you see such as parsing errors or tree-sitter cli errors.
+      description: A clear and concise description of what the bug is. Please include any related errors you see such as parsing errors or tree-sitter CLI errors.
     validations:
       required: true
   - type: textarea
@@ -48,7 +48,7 @@ body:
   - type: textarea
     attributes:
       label: Repro
-      description: Minimal code to reproduce this issue. Ideally this should be reproducible with the C library or the tree-sitter cli, do not suggest an editor or external tool.
+      description: Minimal code to reproduce this issue. Ideally this should be reproducible with the C library or the tree-sitter CLI; do not suggest an editor or external tool.
       placeholder: |
         Example code that causes the issue
       render: PARSER_NAME

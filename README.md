@@ -8,7 +8,7 @@
 <!-- [![crates][crates]](https://crates.io/crates/tree-sitter-PARSER_NAME) -->
 <!-- [![pypi][pypi]](https://pypi.org/project/tree-sitter-PARSER_NAME/) -->
 
-A tree-sitter parser for PARSER_NAME files.
+A Tree-sitter parser for PARSER_NAME files.
 
 ## References
 
