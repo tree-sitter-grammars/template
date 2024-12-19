@@ -38,7 +38,7 @@ jobs:
                   "name": $name,
                   "path": ".",
                   "scope": "source.\($name)",
-                  "file-types": [".\($name)"],
+                  "file-types": ["\($name)"],
                   "injection-regex": "^\($name)$",
                   "highlights": "queries/highlights.scm"
               }],

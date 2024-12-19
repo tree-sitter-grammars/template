@@ -14,8 +14,10 @@ jobs:
     permissions:
       contents: write
       id-token: write
+      attestations: write
     with:
       generate: true
+      attestations: true
 
   # NOTE: uncomment the packages you want to publish
 
