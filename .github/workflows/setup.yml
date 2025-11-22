@@ -11,7 +11,7 @@ jobs:
     if: "!github.event.repository.is_template"
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Install tree-sitter CLI
         uses: tree-sitter/setup-action/cli@v2
         with:
